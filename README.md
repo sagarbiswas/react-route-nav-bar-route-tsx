@@ -1,3 +1,6 @@
+This POC is used to demostarte routing with user impersation in reactjs 19.
+You can user admin@mock.com to login as Admin and user@mock.com for User, if API service is not available.
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
