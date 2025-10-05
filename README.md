@@ -1,5 +1,6 @@
 # This POC demonstrates routing with user impersonation in ReactJS 19.
  You can user admin@mock.com to login as Admin and user@mock.com for User, if API service is not available.
+ Some of the menu and pages will be hide and redirect as per the user role.
 
 # Getting Started with Create React App
 
