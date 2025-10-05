@@ -1,5 +1,5 @@
-This POC is used to demostarte routing with user impersation in reactjs 19.
-You can user admin@mock.com to login as Admin and user@mock.com for User, if API service is not available.
+# This POC demonstrates routing with user impersonation in ReactJS 19.
+ You can user admin@mock.com to login as Admin and user@mock.com for User, if API service is not available.
 
 # Getting Started with Create React App
 
