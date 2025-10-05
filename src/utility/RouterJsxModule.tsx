@@ -21,7 +21,7 @@ const userType = window.sessionStorage.getItem("userType");
 const isLoggedIn = window.sessionStorage.getItem("loggedIn"); // Simulating authentication status
 console.log("userType", userType);
 console.log("isLoggedIn", isLoggedIn);
- window.sessionStorage.setItem("loggedIn",isLoggedIn);
+ window.sessionStorage.setItem("loggedIn",isLoggedIn??"false");
    return (
     <Router>
      <div > <Navbar  isLoggedIn={isLoggedIn} userType={userType} /></div>
