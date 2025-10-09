@@ -110,27 +110,31 @@ export default function AdminHome({ }) {
             </span>
           </div>
           <table style={{ width: 700 }}>
-            <tr style={{ textAlign: "center" }}>
-              <th>Name</th>
-              <th>Email</th>
-              <th>User Type</th>
-              <th>Delete</th>
-            </tr>
-            {data.map((i) => {
-              return (
-                <tr style={{ textAlign: "center" }}>
-                  <td>{i.fname}</td>
-                  <td>{i.email}</td>
-                  <td>{i.userType}</td>
-                  <td>
-                    <FontAwesomeIcon
-                      icon={faTrash}
-                      onClick={() => deleteUser(i._id, i.fname)}
-                    />
-                  </td>
-                </tr>
-              );
-            })}
+            <thead>
+              <tr style={{ textAlign: "center" }}>
+                <th>Name</th>
+                <th>Email</th>
+                <th>User Type</th>
+                <th>Delete</th>
+              </tr>
+            </thead>
+            <tbody>
+              {data.map((i) => {
+                return (
+                  <tr key={i._id} style={{ textAlign: "center" }}>
+                    <td>{i.fname}</td>
+                    <td>{i.email}</td>
+                    <td>{i.userType}</td>
+                    <td>
+                      <FontAwesomeIcon
+                        icon={faTrash}
+                        onClick={() => deleteUser(i._id, i.fname)}
+                      />
+                    </td>
+                  </tr>
+                );
+              })}
+            </tbody>
           </table>
 
           <button

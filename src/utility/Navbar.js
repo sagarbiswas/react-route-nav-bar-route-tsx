@@ -1,8 +1,18 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import "../App.css";
 
 function Navbar({ isLoggedIn, userType }) {
+  const [dropdownOpen, setDropdownOpen] = useState(false);
+
+  useEffect(() => {
+    const handleClickOutside = () => setDropdownOpen(false);
+    if (dropdownOpen) {
+      document.addEventListener('click', handleClickOutside);
+    }
+    return () => document.removeEventListener('click', handleClickOutside);
+  }, [dropdownOpen]);
+
   return (
     <nav className="navbar ms-1 me-1">
       <ul className="nav-list">
@@ -48,6 +58,13 @@ function Navbar({ isLoggedIn, userType }) {
         <li className="nav-item">
           <Link to="/about" className="nav-link">
             About
+          </Link>
+        </li>
+
+         <li className="nav-item dropdown">
+          
+          <Link to="/block" className="nav-link">
+            Block Unsaved Navigation
           </Link>
         </li>
       </ul>

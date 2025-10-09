@@ -11,6 +11,9 @@ import ProtectedRoute from "../JsPages/ProtectedRoute";
 import AdminHome from "../JsPages/adminHome";
 import Product from "../JsPages/products";
 import About from "../JsPages/about";
+import VirtulizationDemp from '../PerfomanceOption/Virtualization';
+import BlockNavigationOnUnsavedData from '../BlockNavigationOnUnsavedData';
+//import BlockNavigationOnUnsavedData from '../BlockNavigationOnUnsavedData';
 function RouterJsxModule() {
  //const role = ['Admin', 'User'];
 // Generate a random index
@@ -60,8 +63,8 @@ console.log("isLoggedIn", isLoggedIn);
           <Route path="/about" element={<About />} />
           <Route path="*" element={<PageNotFoundComponent/>} />
           <Route path="/dashboard" element={<DashboardComponent />} />
-           <Route path="/about" element={<About />} />
-            <Route path="/about2" element={<AboutComponent />} />
+          <Route path="/virtualization" element={<VirtulizationDemp />} />
+          <Route path="/block" element={<BlockNavigationOnUnsavedData />} />
         </Routes>
       </div>
     </Router>

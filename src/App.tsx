@@ -1,4 +1,4 @@
-import React,{useState} from 'react';
+import React,{useState,useEffect} from 'react';
 import logo from './logo.svg';
 import './App.css';
 import RouterJsxModule from './utility/RouterJsxModule';
@@ -10,19 +10,34 @@ import {
   Navigate,
 } from "react-router-dom";
 import DashboardComponent from './DashboardComponent';
+import DemoUseMemo from './DemoUseMemo';
 
-function MyButton({ title, onClock_Event }: { title: string; onClock_Event: () => void }) {
-  return (
-    <button onClick={onClock_Event}>{title}</button>
-  );
-}
 
 function App() {
-  
-  return (
-    <div className='flex-container'>
-     <RouterJsxModule />
+     const [showContent, setShowContent] = useState(false);
+
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      setShowContent(true);
+    }, 500);
+
+    return () => clearTimeout(timer); // Cleanup
+  }, []);
+
+   return (
+    <div>
+      {showContent ? (
+        <RouterJsxModule /> 
+         
+      ) : (
+        <p>Loading...</p>
+      )}
     </div>
+  );
+    // <div className='flex-container'>
+    //   <RouterJsxModule /> 
+    
+    // </div>
  
     // <Router>
     //   <div className="App">
@@ -40,7 +55,7 @@ function App() {
     //     </Routes>
     //   </div>
     // </Router>
-  );
+  //);
 }
 
 export default App;

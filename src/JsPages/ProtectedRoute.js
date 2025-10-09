@@ -1,9 +1,16 @@
 import React from "react";
 import { Navigate, Outlet } from "react-router-dom";
+import { useNavigate } from 'react-router-dom';
 
 function ProtectedRoute() {
-  debugger;
+ // debugger;
   const isLoggedIn = window.sessionStorage.getItem("loggedIn");
+ /*const navigate = useNavigate();
+  const isPageChange = window.sessionStorage.getItem("isPageChange");
+  if (isPageChange === "true") {
+      navigate(window.location.pathname); 
+  }*/
+
   console.log("isLoggedIn in ProtectedRoute", isLoggedIn);
 
   return isLoggedIn === "true" ?
